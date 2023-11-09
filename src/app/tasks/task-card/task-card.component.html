@@ -1,0 +1,17 @@
+<p-card [header]="task.titulo" [subheader]="task.dificuldade" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+      <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+    </ng-template>
+    <p>{{ task.descricao }}</p>
+    <ul>
+      <li><strong>ID:</strong> {{ task.id_task }}</li>
+      <li><strong>Criado em:</strong> {{ task.data_criacao | date }}</li>
+      <li><strong>Concluir até:</strong> {{ task.data_conclusao | date }}</li>
+      <li><strong>Usuário:</strong> {{ task.id_user }}</li>
+    </ul>
+    <ng-template pTemplate="footer">
+      <p-button label="Save" icon="pi pi-check"></p-button>
+      <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+    </ng-template>
+  </p-card>
+  
