@@ -7,7 +7,7 @@ import { Task } from '../task-interface';
   styleUrls: ['./task-table.component.scss']
 })
 export class TaskTableComponent {
-  @Input() task!: Task;
+  @Input() tasks: Task[]=[];
 
 }
 //TASK PRA SEGUNDA; CORRIGIR A PAGINA TASK E FAZER O NGFOR SOMENTE PARA OS DADOS DA TABELA ATUALMENTE ELE TA PEGANDO O CABECALHO TAMBEM POIS O NG FOR ESTA NO COMPONENTE PAI

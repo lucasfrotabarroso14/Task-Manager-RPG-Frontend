@@ -1,0 +1,32 @@
+// /* task-page.component.scss */
+// .task-page-container {
+//     display: flex;
+//     flex-direction: row;
+//     gap: 20px; /* Espaço entre os elementos */
+// }
+
+// .table-container {
+//     flex: 2; /* A tabela ocupa mais espaço */
+//     padding: 10px;
+//     /* Adicione mais estilos aqui se necessário */
+// }
+
+.task-page-container{
+    display: flex; //deixa alinhado na horizontal
+    flex-direction: row;
+    gap: 80px;
+    margin: 50px;
+    
+
+}
+
+.table-container{
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #ddd; //desenha a borda
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); //faz as bordas
+    max-width: 60%;
+}
+// .card-container{
+//     margin-left: 30px;
+// }
