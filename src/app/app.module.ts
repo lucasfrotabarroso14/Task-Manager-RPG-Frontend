@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ToastModule } from 'primeng/toast';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PagesModule } from './pages/pages.module';
+
 import { HeaderComponent } from './shared/components/header/header.component';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { TaskCardComponent } from './tasks/task-card/task-card.component';
-import { TaskTableComponent } from './tasks/task-table/task-table.component';
+
 import { CardModule } from 'primeng/card';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
+import { TaskTableComponent } from './tasks/task-table/task-table.component';
+import { TaskPageComponent } from './pages/task-page/task-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +24,9 @@ import { TableModule } from 'primeng/table';
     FooterComponent,
     TaskCardComponent,
     TaskTableComponent,
-    TaskCardComponent,
-    HomeComponent
+    HomeComponent,
+    TaskPageComponent
+    
     
   ],
   imports: [
@@ -34,7 +37,8 @@ import { TableModule } from 'primeng/table';
     SidebarModule,
     CardModule,
     HttpClientModule,
-    TableModule
+    TableModule,
+    ToastModule
    
     
   ],

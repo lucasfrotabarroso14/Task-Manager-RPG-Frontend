@@ -1,4 +1,4 @@
-
+<p-toast></p-toast>
 <p-table [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
         <tr>
@@ -9,7 +9,7 @@
             <th style="width: 5rem"></th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-task>
+    <ng-template pTemplate="body" let-tasks>
         <tr>
             <td>{{ task.titulo }}</td>
             <td>{{ task.dificuldade }}</td>
@@ -20,3 +20,4 @@
         </tr>
     </ng-template>
 </p-table>
+
