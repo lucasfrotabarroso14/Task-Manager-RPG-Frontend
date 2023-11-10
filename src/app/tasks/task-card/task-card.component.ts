@@ -8,7 +8,7 @@ import { Task } from '../task-interface';
   styleUrls: ['./task-card.component.scss']
 })
 export class TaskCardComponent implements OnInit {
-  @Input() task!: Task[] 
+  @Input() task!: Task 
 
   ngOnInit(): void {
       
