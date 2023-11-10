@@ -14,6 +14,7 @@ import { TaskTableComponent } from './tasks/task-table/task-table.component';
 import { CardModule } from 'primeng/card';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,16 +24,17 @@ import { HttpClientModule } from '@angular/common/http';
     TaskTableComponent,
     TaskCardComponent,
     HomeComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule,
     ToolbarModule,
     ButtonModule,
     SidebarModule,
     CardModule,
     HttpClientModule,
+    TableModule
    
     
   ],

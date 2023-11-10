@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Task } from '../task-interface';
 
 @Component({
   selector: 'app-task-table',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./task-table.component.scss']
 })
 export class TaskTableComponent {
+  @Input() task!: Task 
 
 }
