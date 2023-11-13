@@ -3,11 +3,11 @@
 <div class="task-page-container">
 
     <div class="table-container">
-        <app-task-table  [tasks]="tasks"></app-task-table>
+        <app-task-table  [tasks]="tasks" (onTaskSelect)="onTaskSelected($event)"></app-task-table>
     </div>
 
     <div class="card-container">
-        <app-task-card *ngFor="let task of tasks" [task]="task"></app-task-card>
+        <app-task-card  [task]="selectedTask"></app-task-card>
     </div>
 
 </div>

@@ -10,6 +10,7 @@ import { TaskService } from 'src/app/tasks/task.service';
 })
 export class TaskPageComponent implements OnInit {
   tasks: Task[] = []; // Isso deve ser um array de Task
+  selectedTask !: Task 
 
   constructor(private taskService: TaskService) {}
 
@@ -17,5 +18,9 @@ export class TaskPageComponent implements OnInit {
     this.taskService.getTasks().subscribe((tasksFromServer: Task[]) => {
       this.tasks = tasksFromServer;
     });
+  }
+  onTaskSelected(task : Task){
+    this.selectedTask = task
+    
   }
 }
