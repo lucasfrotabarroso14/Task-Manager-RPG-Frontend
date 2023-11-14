@@ -3,11 +3,13 @@
 <div class="task-page-container">
 
     <div class="kanban-container">
+        
         <app-kanban [tasks]="tasks"></app-kanban>
 
     </div>
     <div class="table-card-wrapper">
         <div class="table-container">
+        
             <app-task-table  [tasks]="tasks" (onTaskSelect)="onTaskSelected($event)"></app-task-table>
         </div>
     
