@@ -1,0 +1,29 @@
+.kanban-board {
+  display: flex;
+  // Adicione mais estilos conforme necessário
+  background-color: rgb(217, 202, 202);
+ 
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+}
+
+.kanban-column {
+  flex: 1;
+  margin: 0 10px;
+  // Adicione mais estilos conforme necessário
+}
+
+.tasks-list {
+  list-style-type: none;
+  padding: 0;
+  // Adicione mais estilos conforme necessário
+}
+
+.task-card {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  // Adicione mais estilos conforme necessário
+}

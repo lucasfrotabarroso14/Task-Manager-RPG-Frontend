@@ -11,16 +11,22 @@
 //     /* Adicione mais estilos aqui se necessário */
 // }
 
-.task-page-container{
-    display: flex; //deixa alinhado na horizontal
-    flex-direction: row;
-    gap: 80px;
-    margin: 50px;
+// .task-page-container{
+//     display: flex; //deixa alinhado na horizontal
+//     flex-direction: column;
+//     gap: 80px;
+//     margin: 50px;
     
 
+// }
+.kanban-container{
+    margin:15px;
 }
-
-.table-container{
+.table-card-wrapper {
+    display: flex;
+    gap: 20px;
+}
+.table-container  {
     flex: 2;
     padding: 10px;
     border: 1px solid #ddd; //desenha a borda

@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { TaskTableComponent } from './tasks/task-table/task-table.component';
 import { TaskPageComponent } from './pages/task-page/task-page.component';
+import { KanbanComponent } from './kanban/kanban.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { TaskPageComponent } from './pages/task-page/task-page.component';
     TaskCardComponent,
     TaskTableComponent,
     HomeComponent,
-    TaskPageComponent
+    TaskPageComponent,
+    KanbanComponent
     
     
   ],

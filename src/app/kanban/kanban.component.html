@@ -1,0 +1,14 @@
+<div class="kanban-board">
+    <div class="kanban-column" *ngFor="let category of categories">
+        <h3>{{category.name}}</h3>
+        <ul class="tasks-list">
+            <li *ngFor="let task of category.tasks">
+                <div class="task-card">
+                    <h5>{{task.titulo}}</h5>
+                 
+                    <!-- Adicione mais detalhes da tarefa aqui -->
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

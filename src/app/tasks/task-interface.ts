@@ -6,4 +6,5 @@ export interface Task {
     data_criacao:Date;
     data_conclusao: Date | null;
     id_user: number;
+    status: string | null;
 }

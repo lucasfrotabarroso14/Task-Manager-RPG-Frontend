@@ -17,6 +17,8 @@ export class TaskPageComponent implements OnInit {
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasksFromServer: Task[]) => {
       this.tasks = tasksFromServer;
+      console.log('tasks recebidas:', this.tasks);
+      
     });
   }
   onTaskSelected(task : Task){
