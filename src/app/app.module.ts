@@ -18,6 +18,7 @@ import { TableModule } from 'primeng/table';
 import { TaskTableComponent } from './tasks/task-table/task-table.component';
 import { TaskPageComponent } from './pages/task-page/task-page.component';
 import { KanbanComponent } from './kanban/kanban.component';
+import { DragDropModule } from 'primeng/dragdrop';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { KanbanComponent } from './kanban/kanban.component';
     CardModule,
     HttpClientModule,
     TableModule,
-    ToastModule
+    ToastModule,
+    DragDropModule
    
     
   ],

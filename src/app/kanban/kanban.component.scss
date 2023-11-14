@@ -1,19 +1,26 @@
 .kanban-board {
   display: flex;
   // Adicione mais estilos conforme necessário
-  background-color: rgb(217, 202, 202);
+  background-color: rgb(253, 253, 254);
+  border-radius: 10px;
  
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid #000000;
+  box-shadow: 0 2px 4px rgba(8, 1, 1, 0.1);
   
 }
-
+h3, h5 {
+  text-align: center; /* Centraliza o texto dentro do h3 e h5 */
+  width: 100%; /* Ocupa a largura total do seu contêiner para garantir que o centro de texto funcione corretamente */
+}
 .kanban-column {
   flex: 1;
   margin: 0 10px;
   // Adicione mais estilos conforme necessário
 }
-
+.kanban-column h3{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700; /* Para um texto mais grosso e destacado */
+}
 .tasks-list {
   list-style-type: none;
   padding: 0;
@@ -22,8 +29,10 @@
 
 .task-card {
   border: 1px solid #ccc;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: rgb(155, 47, 47);
+  color: white;
+  
   // Adicione mais estilos conforme necessário
 }

@@ -20,4 +20,7 @@ export class TaskService {
       );
 
   }
+  updateTask(task:Task){
+    return this.http.put(`${this.apiUrl}${task.id_task}`, task)
+  }
 }

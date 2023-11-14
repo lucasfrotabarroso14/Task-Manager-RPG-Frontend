@@ -1,11 +1,15 @@
 <div class="kanban-board">
-    <div class="kanban-column" *ngFor="let category of categories">
-        <h3>{{category.name}}</h3>
+    <div class="kanban-column" *ngFor="let category of categories" 
+         pDroppable (onDrop)="onDrop($event, category)" 
+         (dragover)="onDragOver($event)">
+        <h3>{{ category.name }}</h3>
         <ul class="tasks-list">
-            <li *ngFor="let task of category.tasks">
+            <li *ngFor="let task of category.tasks" 
+                pDraggable="true" 
+                (onDragStart)="onDragStart($event, task)" 
+                (onDragEnd)="onDragEnd($event)">
                 <div class="task-card">
-                    <h5>{{task.titulo}}</h5>
-                 
+                    <h5>{{ task.titulo }}</h5>
                     <!-- Adicione mais detalhes da tarefa aqui -->
                 </div>
             </li>
