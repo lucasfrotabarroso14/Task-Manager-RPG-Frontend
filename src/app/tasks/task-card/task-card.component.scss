@@ -11,15 +11,27 @@
     
    
 }
+
+.card-header-pendente {
+    background: #f0ad4e; /* Escolha uma cor para Pendente */
+  }
+  
+  .card-header-em-andamento {
+    background: #5bc0de; /* Escolha uma cor para Em Andamento */
+  }
+  
+  .card-header-concluido {
+    background: #5cb85c; /* Escolha uma cor para Concluído */
+  }
 .card-body p{
     // height: 50px;
-    overflow: auto;
-    
-    
+    overflow: auto;  
 
 }
+
 .card-header{
-    background-color: #f5f5f5;
+    
+    color: white;
     padding: 10px; //espaco interno de 10 px em todos os lados do elemento
     text-align: center;
     

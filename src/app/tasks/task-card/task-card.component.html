@@ -1,9 +1,13 @@
 
 
       <div *ngIf="task" class="custom-card">
-        <div class="card-header">
+        <div class="card-header" [ngClass]="{
+          'card-header-pendente': task.status === 'Pendente',
+          'card-header-em-andamento': task.status === 'Em Andamento',
+          'card-header-concluido': task.status === 'Concluido'
+        }">
           
-          <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+          <!-- <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" /> -->
           <h3>{{task.titulo}}</h3>
           <h4>{{task.dificuldade}}</h4>
         </div>

@@ -29,7 +29,7 @@ export class KanbanComponent  {
   categories: Category[] = [
     { name: 'Pendente', tasks: [] },
     { name: 'Em Andamento', tasks: [] },
-    { name: 'Concluído', tasks: [] }
+    { name: 'Concluido', tasks: [] }
   ];
 
   constructor(private taskService: TaskService) {}

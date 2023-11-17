@@ -4,22 +4,19 @@
     flex-direction: column; // Organiza os filhos em colunas
     gap: 20px; // Espaço entre o Kanban e a seção de tabela e cartão
     margin: 15px; // Margem ao redor do contêiner
-}
-.kanban-container {
-    flex-grow: 1; // O Kanban pode crescer para ocupar o espaço disponível
-    margin-bottom: 20px; // Espaço abaixo do Kanban, antes da seção de tabela e cartão
-    width: 100%;
-    height: 80%;
     
 }
-
+.kanban-container {
+    flex-grow: 1; 
+    margin-bottom: 20px; 
+    max-width: 100%;
+      
+}
 
 .table-card-wrapper {
     display: flex;
     gap: 60px;
     align-items: center;
- 
-
     
 }
 .table-container  {
@@ -28,6 +25,7 @@
     border: 1px solid #ddd; //desenha a borda
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); //faz as bordas
     max-width: 70%;
+    margin-bottom: 5rem
 }
 // .card-container{
 //     margin-left: 30px;

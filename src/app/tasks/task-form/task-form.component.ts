@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {  FormControl, FormGroup } from '@angular/forms';
 import { TaskService } from '../task.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-task-form',
@@ -10,12 +11,16 @@ import { TaskService } from '../task.service';
 export class TaskFormComponent implements OnInit{
   constructor(private taskService : TaskService){}
 
+  dificuldade_options : any[]=[
+    {label : 'Fácil', value: 'Facil'},
+    {label:'Médio', value: 'Medio'},
+    {label:'difícil', value:'dificio'}
+  ]
 
-
-  statuses : any[]=[
+  status_options : any[]=[
     {label : 'Pendente', value: 'Pendente'},
-    {label:'Em Andamento', value: 'Em Andamento'},
-    {label:'Concluido', value:'Concluido'}
+    {label:'Em Andamento', value:'Em Andamento'},
+    {label:'Concluído', value:'Concluído'}
   ]
   taskForm!: FormGroup;
   visible : boolean= true
@@ -31,8 +36,15 @@ export class TaskFormComponent implements OnInit{
       
   }
   onSubmit(){
+    
     if(this.taskForm.valid){
-      this.taskService.addTask(this.taskForm.value).subscribe({
+      let formData = { ...this.taskForm.value };
+
+    // Formatando a data de conclusão
+    if (formData.data_conclusao) {
+      formData.data_conclusao = formatDate(formData.data_conclusao, 'yyyy-MM-dd', 'en-US');
+    }
+      this.taskService.addTask(formData).subscribe({
         next : (newTask) => {
           this.taskForm.reset();
           this.visible= false
@@ -48,8 +60,5 @@ export class TaskFormComponent implements OnInit{
     }
 
   }
-
   
-  
-
 }

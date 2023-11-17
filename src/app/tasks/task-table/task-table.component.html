@@ -1,4 +1,4 @@
-<p-table [value] = "tasks" [tableStyle]="{ 'min-width': '50rem' }">
+<p-table [value] = "tasks"  [scrollable]="true"[tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
         <tr>
             <th>Título</th>
@@ -7,7 +7,8 @@
             <th></th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-task >
+    <ng-template  pTemplate="body" let-task >
+        
         <tr>
             <td>{{ task.titulo }}</td>
             <td>{{ task.dificuldade }}</td>

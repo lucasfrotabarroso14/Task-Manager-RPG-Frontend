@@ -12,11 +12,24 @@
             </div>
 
             <label for="dificuldade">Dificuldade</label>
-            <input type="text" id="dificuldade" formControlName="dificuldade">
+            <p-dropdown
+            
+            id="dificuldade" 
+            formControlName="dificuldade"
+            [options]="dificuldade_options" 
+            placeholder="...">
+             
+            </p-dropdown>
+            <!-- <input type="text" id="dificuldade" formControlName="dificuldade"  [options]="dificuldade_options"> -->
 
             <div class="status">
                 <label for="status">Status</label>
-                <p-dropdown id="status" formControlName="status" [options]="statuses" ></p-dropdown>
+                <p-dropdown
+                 id="status"
+                 formControlName="status" 
+                 [options]="status_options"
+                 placeholder="..." >
+                </p-dropdown>
 
             </div>
 

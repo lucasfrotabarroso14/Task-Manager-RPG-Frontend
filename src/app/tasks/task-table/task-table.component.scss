@@ -3,3 +3,12 @@
     border-color: white !important; /* Cor da borda do botão */
     color: white !important; /* Cor do texto do botão */
 }
+
+:host ::ng-deep .p-datatable .p-datatable-wrapper {
+    max-height: 30rem; /* Define a altura máxima para o contêiner da tabela */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical se necessário */
+}
+
+:host ::ng-deep .p-datatable {
+    min-width: 20rem; /* Define a largura mínima para a tabela */
+}
