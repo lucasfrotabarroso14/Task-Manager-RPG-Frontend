@@ -19,6 +19,17 @@ import { TaskTableComponent } from './tasks/task-table/task-table.component';
 import { TaskPageComponent } from './pages/task-page/task-page.component';
 import { KanbanComponent } from './kanban/kanban.component';
 import { DragDropModule } from 'primeng/dragdrop';
+import { TaskFormComponent } from './tasks/task-form/task-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +39,8 @@ import { DragDropModule } from 'primeng/dragdrop';
     TaskTableComponent,
     HomeComponent,
     TaskPageComponent,
-    KanbanComponent
+    KanbanComponent,
+    TaskFormComponent
     
     
   ],
@@ -42,7 +54,12 @@ import { DragDropModule } from 'primeng/dragdrop';
     HttpClientModule,
     TableModule,
     ToastModule,
-    DragDropModule
+    DragDropModule,
+    ReactiveFormsModule,
+    DialogModule,
+    DropdownModule,
+    CalendarModule,
+    BrowserAnimationsModule
    
     
   ],

@@ -1,0 +1,34 @@
+<div class="task-form-dialog">
+    <p-dialog header="Adicione uma nova Task:" [(visible)]="visible" [style]="{width: '50vw'}" >
+        <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+            <div>
+                <label for="titulo">Titulo</label>
+                <input type="text" id="titulo" formControlName="titulo">
+            </div>
+
+            <div>
+                <label for="descricao">Descrição</label>
+                <textarea  id="" formControlName="descricao"></textarea>
+            </div>
+
+            <label for="dificuldade">Dificuldade</label>
+            <input type="text" id="dificuldade" formControlName="dificuldade">
+
+            <div class="status">
+                <label for="status">Status</label>
+                <p-dropdown id="status" formControlName="status" [options]="statuses" ></p-dropdown>
+
+            </div>
+
+            <div>
+                <label for="data_conclusao">Data de Conclusão</label>
+                <p-calendar id="data_conclusao" formControlName="data_conclusao" [showIcon]="true" ></p-calendar>
+            </div>
+
+            <button type="submit" pbutton label="add Task">Add</button>
+
+        </form>
+
+    </p-dialog>
+
+</div>

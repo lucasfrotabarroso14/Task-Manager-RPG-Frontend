@@ -6,6 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  displayAddTaskDialog : boolean = false
+
+
+
+  showDialog(){
+    this.displayAddTaskDialog = !this.displayAddTaskDialog
+    console.log(this.displayAddTaskDialog);
+    
+  }
+
+  
  
   
     

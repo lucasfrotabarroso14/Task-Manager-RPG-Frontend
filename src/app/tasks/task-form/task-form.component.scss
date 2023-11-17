@@ -1,0 +1,47 @@
+.task-form-dialog .p-dialog {
+    border-radius: 10px; /* Borda arredondada para o diálogo */
+}
+
+.task-form-dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espaçamento entre os campos */
+}
+
+.task-form-dialog label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333; /* Cor do texto do label */
+}
+
+.task-form-dialog input[type="text"],
+.task-form-dialog textarea
+ {
+    width: 100%; /* Tornar os campos de entrada responsivos */
+    padding: 0.5rem;
+    border: 1px solid #ccc; /* Borda dos campos de entrada */
+    border-radius: 4px; /* Borda arredondada */
+}
+
+
+.task-form-dialog textarea {
+    resize: vertical; /* Permitir redimensionamento vertical do textarea */
+}
+
+.task-form-dialog button[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    background-color: brown; /* Cor de fundo do botão */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-form-dialog button[type="submit"]:hover {
+    background-color: green; /* Cor de fundo do botão ao passar o mouse */
+}
+.task-form-dialog .form-field {
+    margin-bottom: 1rem;
+}

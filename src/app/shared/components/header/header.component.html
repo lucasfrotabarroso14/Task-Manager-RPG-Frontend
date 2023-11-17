@@ -10,8 +10,9 @@
    <div class="profile">
       
       <p-button label="Profile"></p-button>
-      <p-button class="add-task-button" icon ="pi pi-plus" > </p-button>
+      <p-button class="add-task-button" icon ="pi pi-plus" (click)="showDialog()"> </p-button>
       
    </div>
   </p-toolbar>
+  <app-task-form *ngIf="displayAddTaskDialog"></app-task-form>
   
