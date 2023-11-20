@@ -71,5 +71,9 @@ export class KanbanComponent  {
       category.tasks = this.tasks.filter(task => task.status === category.name);
     });
   }
+  openModal(){
+    console.log("deu certo")
+    
+  }
 }
 

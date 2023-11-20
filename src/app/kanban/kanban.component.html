@@ -8,8 +8,13 @@
                 pDraggable="true" 
                 (onDragStart)="onDragStart($event, task)" 
                 (onDragEnd)="onDragEnd($event)">
-                <div class="task-card">
-                    <h5>{{ task.titulo }}</h5>
+                <div  (click)="openModal()"class="task-card"
+                [ngClass]="{
+                    'task-card-pendente': category.name === 'Pendente',
+                    'task-card-em-andamento': category.name === 'Em Andamento',
+                    'task-card-concluido': category.name === 'Concluido'
+                }" >
+                    <h5 >{{ task.titulo }}</h5>
                     <!-- Adicione mais detalhes da tarefa aqui -->
                 </div>
             </li>

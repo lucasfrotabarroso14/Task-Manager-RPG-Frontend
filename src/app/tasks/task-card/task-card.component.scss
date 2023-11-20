@@ -1,61 +1,129 @@
 
-
-.custom-card{
-
-    width: 300px;
-    border: 1px solid #ddd; //desenha a borda
-    border-radius: 10px; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); //faz as bordas
+.card {
+    
+    background-color: rgb(235, 233, 233);
+    border-radius: 1rem;
+    border: black 0.2rem solid;
+   
+    box-shadow: 0.4rem 0.4rem 0.6rem #00000040;
+    width: 18.75rem;
+    height: 25rem;
     display: flex;
     flex-direction: column;
-    
+    .card {
+        overflow: hidden; /* Adiciona isso para garantir que o conteúdo não ultrapasse as bordas */
+        /* restante das propriedades */
+    }
+        
+   }
    
-}
-
+   .card:hover {
+    
+    border: brown 0.2em solid;
+    // border-radius: 2.5rem 0 2.5rem 0;
+   }
 .card-header-pendente {
-    background: #f0ad4e; /* Escolha uma cor para Pendente */
+    background-color: #d50c02; /* Escolha uma cor para Pendente */
+    width: 100%;
+    border-radius: 13px;
+    height: 38%; 
   }
   
   .card-header-em-andamento {
-    background: #5bc0de; /* Escolha uma cor para Em Andamento */
+    background-color: #e56c02;  /* Escolha uma cor para Em Andamento */
+    width: 100%;
+    border-radius: 13px;
+    height: 38%; 
   }
   
   .card-header-concluido {
-    background: #5cb85c; /* Escolha uma cor para Concluído */
+    background-color: #018a01; /* Escolha uma cor para Concluído */
+    width: 100%;
+    border-radius: 13px;
+    height: 38%; 
   }
-.card-body p{
-    // height: 50px;
-    overflow: auto;  
 
-}
 
 .card-header{
     
-    color: white;
-    padding: 10px; //espaco interno de 10 px em todos os lados do elemento
-    text-align: center;
-    
+    padding: 22px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    flex: 1; /* Isso faz com que o .card-body ocupe todo o espaço disponível */
+    overflow: auto;  
+   
+    height: 150px; //altura
+    width: 100%;
     
     
 }
 
 
-.card-header img {
-    max-width: 200px;
-    max-height: 200p;
-    border-radius: 50%;
-    margin: 0 auto;
+
+.card-header h3{
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem; // tamanho maior para o título
+    font-weight: bold; // título em negrito
+    text-transform: uppercase;
+    height: 30%;
+    
+}
+.card-header h4{
+    
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgb(219, 219, 219); /* Fundo branco para o texto */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); /* Sombra para dar destaque */
+    margin-top: 8px; /* Espaço acima do elemento de dificuldade */
+    font-size: 0.9rem; /* Tamanho menor do texto */
+    
+    
+}
+.dificuldade-facil {
+    color: #2ECC40; /* Verde para fácil */
 }
 
+.dificuldade-media {
+    color: #FF851B; /* Laranja para médio */
+}
 
+.dificuldade-dificil {
+    color: #FF4136; /* Vermelho para difícil */
+}
 .card-body {
-    padding: 10px;
+    
+    font-family: 'Roboto', sans-serif;
+    color: #333; // cor escura para melhor leitura
+    margin: auto;
+   
 }
+.card-body p{
+    // height: 50px;
+    overflow: auto;  
+    flex:1;
+    padding:10px;
+
+}
+.card-body ul {
+    list-style: none; // Remove marcadores da lista
+    
+    
+}
+.card-body li{
+    margin: 4px;
+}
+
 
 .card-footer {
-    background-color: #f5f5f5;
-    padding: 10px;
+    
+    padding: 01px;
     text-align: center;
+    border-radius: 10px;
+    margin-top: 45px;
 }
 .btn{
     padding: 5px 10px;
@@ -64,15 +132,32 @@
     cursor: pointer;
     margin-right:10px;
     width: 80px;
+    font-weight: bold;
     
     
 }
 .btn-save {
   background-color: #4CAF50; /* Verde para 'Iniciar', por exemplo */
   color: white;
+  border:black 1px solid;
 }
 .btn-cancel {
     background-color: #f44336; /* Vermelho para 'Cancelar' */
     color: white;
+    border: black 1px solid;
+    
   }
+  button {
+    padding: 17px 40px;
+    border-radius: 50px;
+   
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.0px; 
+    transition: all .5s ease;
+    
+   }
+   
+   
+   
   

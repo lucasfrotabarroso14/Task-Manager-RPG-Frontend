@@ -1,4 +1,6 @@
 
+      <div class="card">
+        
 
       <div *ngIf="task" class="custom-card">
         <div class="card-header" [ngClass]="{
@@ -7,9 +9,13 @@
           'card-header-concluido': task.status === 'Concluido'
         }">
           
-          <!-- <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" /> -->
+          
           <h3>{{task.titulo}}</h3>
-          <h4>{{task.dificuldade}}</h4>
+          <h4 [ngClass]="{
+            'dificuldade-facil': task.dificuldade === 'Facil',
+            'dificuldade-media': task.dificuldade === 'Medio',
+            'dificuldade-dificil': task.dificuldade === 'Dificil'
+          }">{{task.dificuldade}}</h4>
         </div>
 
         <div class="card-body">
@@ -26,4 +32,7 @@
           <button class="btn btn-save">Iniciar</button>
           <button class="btn btn-cancel">Cancelar</button>
       </div>
+      </div>
+      
+
       </div>
