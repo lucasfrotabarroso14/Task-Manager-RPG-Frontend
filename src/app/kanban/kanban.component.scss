@@ -25,9 +25,6 @@ h3, h5 {
 .kanban-column h3{
   font-family: 'Roboto', sans-serif;
   font-weight: 700; 
-  border-bottom: 2px solid black;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
   
 }
 .tasks-list {
@@ -39,6 +36,7 @@ h3, h5 {
 }
 .task-card-pendente {
   background-color: #d50c02; /* Vermelho para Pendente */
+  
 }
 
 .task-card-em-andamento {
@@ -49,15 +47,15 @@ h3, h5 {
   background-color: #018a01; /* Verde para Concluído */
 }
 .task-card-pendente:hover {
-  background-color: #FF6347; /* Um tom mais claro ou diferente de vermelho para Pendente */
+    background-color: #FF6347; /* Um tom mais claro ou diferente de vermelho para Pendente */
 }
 
 .task-card-em-andamento:hover {
-  background-color: #FFA500; /* Um tom mais claro ou diferente de laranja para Em Andamento */
+    background-color: #FFA500; /* Um tom mais claro ou diferente de laranja para Em Andamento */
 }
 
 .task-card-concluido:hover {
-  background-color: #32CD32; /* Um tom mais claro ou diferente de verde para Concluído */
+    background-color: #32CD32; /* Um tom mais claro ou diferente de verde para Concluído */
 }
 
 .task-card {

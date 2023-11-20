@@ -1,7 +1,22 @@
+<div class="home-page-container">
 
-
-<div class="card-container">
-     <app-task-card *ngFor="let task of tasks_pendentes" [task]="task"></app-task-card>
+     <div class="chart-container">
+          <div class="title-status">
+               <h2>STATUS TASKS:</h2>
+          </div>
+          
+          <app-chart></app-chart>
+     </div>
+     <div class="title-cards">
+          <h2>CARDS PENDENTES:</h2>
+     </div>
+     
+     <div class="card-container">
+          
+          <app-task-card *ngFor="let task of tasks_pendentes" [task]="task"></app-task-card>
+     </div>
+   
+     
 </div>
 
   

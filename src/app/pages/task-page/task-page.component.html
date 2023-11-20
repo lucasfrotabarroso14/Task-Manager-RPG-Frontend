@@ -4,9 +4,21 @@
 
     <div class="kanban-container">
         
-        <app-kanban [tasks]="tasks"></app-kanban>
+        <app-kanban (click)="showModal()" [tasks]="tasks"></app-kanban>
+        
+        
 
     </div>
+    
+    <div class="modal" >
+        <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+            <p class="m-0">
+               descricao
+            </p>
+        </p-dialog>
+    
+    </div>
+
     <div class="table-card-wrapper">
         <div class="table-container">
         
@@ -19,5 +31,6 @@
     
 
     </div>
+
    
 </div>

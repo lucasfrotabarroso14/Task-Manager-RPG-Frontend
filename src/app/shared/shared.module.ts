@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 
 
@@ -11,7 +13,9 @@ import { FooterComponent } from './components/footer/footer.component';
   declarations: [
     
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent,
+    ChartComponent
   ],
   imports: [
     CommonModule

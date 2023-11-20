@@ -25,6 +25,9 @@ import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalComponent } from './shared/components/modal/modal.component';
+import { ChartModule } from 'primeng/chart';
+import { ChartComponent } from './shared/components/chart/chart.component';
 
 
 
@@ -40,7 +43,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     TaskPageComponent,
     KanbanComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    ModalComponent,
+    ChartComponent
+
     
     
   ],
@@ -59,7 +65,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DialogModule,
     DropdownModule,
     CalendarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ChartModule
+    
    
     
   ],

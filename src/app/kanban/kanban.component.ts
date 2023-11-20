@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../tasks/task-interface';
 import { TaskService } from '../tasks/task.service';
 
@@ -13,6 +13,8 @@ interface Category {
   styleUrls: ['./kanban.component.scss']
 })
 export class KanbanComponent  {
+  
+  @Output() eventEmitter = new EventEmitter()
   @Input() set tasks(value: Task[]) {
     this._tasks = value || [];
     this.categorizeTasks(); // Chama categorizeTasks sempre que a lista de tasks é atualizada
@@ -25,6 +27,7 @@ export class KanbanComponent  {
 
   private _tasks: Task[] = [];
   private draggedTask?: Task;
+
 
   categories: Category[] = [
     { name: 'Pendente', tasks: [] },
@@ -72,8 +75,10 @@ export class KanbanComponent  {
     });
   }
   openModal(){
-    console.log("deu certo")
+    console.log("apertou");
     
+    this.eventEmitter.emit()
+
   }
 }
 

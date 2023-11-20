@@ -11,6 +11,7 @@ import { TaskService } from 'src/app/tasks/task.service';
 export class TaskPageComponent implements OnInit {
   tasks: Task[] = []; // Isso deve ser um array de Task
   selectedTask !: Task 
+  visible: boolean = false
 
   constructor(private taskService: TaskService) {}
 
@@ -25,5 +26,8 @@ export class TaskPageComponent implements OnInit {
   onTaskSelected(task : Task){
     this.selectedTask = task
     
+  }
+  showModal(){
+    this.visible = !this.visible
   }
 }
