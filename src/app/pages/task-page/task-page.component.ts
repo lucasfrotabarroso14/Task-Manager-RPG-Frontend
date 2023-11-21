@@ -12,6 +12,8 @@ export class TaskPageComponent implements OnInit {
   tasks: Task[] = []; // Isso deve ser um array de Task
   selectedTask !: Task 
   visible: boolean = false
+  descricao_task : string | null = null
+
 
   constructor(private taskService: TaskService) {}
 
@@ -27,7 +29,16 @@ export class TaskPageComponent implements OnInit {
     this.selectedTask = task
     
   }
+  showTaskDetails(task:Task){
+    this.selectedTask = task
+    this.descricao_task = this.selectedTask.descricao
+    
+    
+    this.showModal()
+  }
   showModal(){
     this.visible = !this.visible
+   
+    
   }
 }

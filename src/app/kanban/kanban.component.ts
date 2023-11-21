@@ -74,10 +74,11 @@ export class KanbanComponent  {
       category.tasks = this.tasks.filter(task => task.status === category.name);
     });
   }
-  openModal(){
-    console.log("apertou");
+  openModal(task:Task){
     
-    this.eventEmitter.emit()
+    
+    
+    this.eventEmitter.emit(task)
 
   }
 }

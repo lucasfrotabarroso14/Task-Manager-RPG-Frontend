@@ -4,16 +4,16 @@
 
     <div class="kanban-container">
         
-        <app-kanban (click)="showModal()" [tasks]="tasks"></app-kanban>
+        <app-kanban (eventEmitter)="showTaskDetails($event)" [tasks]="tasks"></app-kanban>
         
         
 
     </div>
     
     <div class="modal" >
-        <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+        <p-dialog header="Descricão da Task:" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
             <p class="m-0">
-               descricao
+               {{descricao_task}}
             </p>
         </p-dialog>
     
