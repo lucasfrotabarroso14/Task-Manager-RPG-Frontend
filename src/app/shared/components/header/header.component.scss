@@ -19,7 +19,7 @@
 }
 /* Sobrescrevendo os estilos do botão do PrimeNG */
 :host ::ng-deep .p-button {
-    background-color: brown !important; /* Cor de fundo do botão */
+    background-image: linear-gradient(to bottom, #a52a2a, #5a2a2a) !important;
     border-color: brown !important; /* Cor da borda do botão */
     color: white !important; /* Cor do texto do botão */
 }

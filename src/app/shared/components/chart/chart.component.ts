@@ -31,7 +31,7 @@ export class ChartComponent implements OnInit {
                     'black',
                     'black',
                     'black'],
-                  borderWidth: 1.5
+                  borderWidth: 2
               }
           ]
       };

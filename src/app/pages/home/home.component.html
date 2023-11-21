@@ -7,13 +7,17 @@
           
           <app-chart></app-chart>
      </div>
-     <div class="title-cards">
-          <h2>CARDS PENDENTES:</h2>
-     </div>
+
      
-     <div class="card-container">
-          
-          <app-task-card *ngFor="let task of tasks_pendentes" [task]="task"></app-task-card>
+     
+     <div class="card-section">
+          <div class="title-cards">
+               <h2>CARDS PENDENTES:</h2>
+          </div>
+          <div class="card-container">
+               <app-task-card *ngFor="let task of tasks_pendentes" [task]="task"></app-task-card>
+          </div>
+         
      </div>
    
      
