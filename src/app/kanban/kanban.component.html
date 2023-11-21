@@ -3,13 +3,14 @@
          pDroppable (onDrop)="onDrop($event, category)" 
          (dragover)="onDragOver($event)">
         <h3>{{ category.name }}</h3>
+        <div class="linha"></div>
         <ul class="tasks-list">
 
             <li *ngFor="let task of category.tasks" 
                 pDraggable="true" 
                 (onDragStart)="onDragStart($event, task)" 
                 (onDragEnd)="onDragEnd($event)">
-
+          
                 <div  (click)="openModal(task)"class="task-card"
                 [ngClass]="{
                     'task-card-pendente': category.name === 'Pendente',

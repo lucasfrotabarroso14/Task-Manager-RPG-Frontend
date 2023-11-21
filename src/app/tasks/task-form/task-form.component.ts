@@ -14,13 +14,13 @@ export class TaskFormComponent implements OnInit{
   dificuldade_options : any[]=[
     {label : 'Fácil', value: 'Facil'},
     {label:'Médio', value: 'Medio'},
-    {label:'difícil', value:'dificio'}
+    {label:'Difícil', value:'Dificil'}
   ]
 
   status_options : any[]=[
     {label : 'Pendente', value: 'Pendente'},
     {label:'Em Andamento', value:'Em Andamento'},
-    {label:'Concluído', value:'Concluído'}
+    {label:'Concluído', value:'Concluido'}
   ]
   taskForm!: FormGroup;
   visible : boolean= true
