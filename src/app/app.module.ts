@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { ChartModule } from 'primeng/chart';
 import { ChartComponent } from './shared/components/chart/chart.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 
 
@@ -45,7 +46,8 @@ import { ChartComponent } from './shared/components/chart/chart.component';
     KanbanComponent,
     TaskFormComponent,
     ModalComponent,
-    ChartComponent
+    ChartComponent,
+    LoginPageComponent
 
     
     
