@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from 'src/app/tasks/task-interface';
+import { Task,TaskStatusCount } from 'src/app/tasks/task-interface';
 import { TaskService } from 'src/app/tasks/task.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { TaskService } from 'src/app/tasks/task.service';
 export class HomeComponent implements OnInit {
   tasks: Task[] = []; // Isso deve ser um array de Task
   tasks_pendentes: Task[]=[]
+  tasksCounts !: TaskStatusCount
 
   constructor(private taskService: TaskService) {}
 
@@ -19,7 +20,22 @@ export class HomeComponent implements OnInit {
        this.tasks = tasksFromServer;
 
        this.tasks_pendentes = this.tasks.filter(tasks => tasks.status=="Pendente")
+    });
+
+    this.taskService.countTasks().subscribe((taskCountedFromServer: TaskStatusCount) => {
+      this.tasksCounts = taskCountedFromServer;
+      console.log("dados enviados",this.tasksCounts); //aqui ele retorna o objeto do backend que eu quero
+      
+   
       
     });
+    
+    
+    
+    
+    
+  
+     
+     
   }
 }

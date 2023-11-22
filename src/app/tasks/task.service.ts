@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Environment } from 'src/environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { Task } from './task-interface';
+import { Task,TaskStatusCount } from './task-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +26,14 @@ export class TaskService {
 
   addTask(task : Task) : Observable<Task> {
     return this.http.post<Task>(this.apiUrl, task)
+  }
+
+  countTasks(): Observable<TaskStatusCount> {
+    return this.http.get<{result : TaskStatusCount}>(`${this.apiUrl}status_count`)
+    .pipe(
+      map(response => response.result)
+    )
+   
+
   }
 }

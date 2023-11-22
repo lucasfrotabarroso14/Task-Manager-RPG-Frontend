@@ -5,17 +5,7 @@
 }
 
 
-.card-container{
-    margin: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap:20px;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    
-}
+
 
 .title-status h2 {
     font-size: 1.5rem;
@@ -63,14 +53,18 @@ h2 {
     margin: auto;
 }
 
-.card-container {
+.card-container{
     margin: 20px;
-    display: flex;
+    display:flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 20px;
+    gap:90px;
+    height: 100%;
+    width: 100%;
     align-items: center;
+    justify-content: center;
+    
 }
+
 .card-section{
     width: 95%;
     

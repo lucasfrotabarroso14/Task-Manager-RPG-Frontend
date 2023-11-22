@@ -5,7 +5,7 @@
                <h2>STATUS TASKS:</h2>
           </div>
           
-          <app-chart></app-chart>
+          <app-chart *ngIf="tasksCounts" [status_count]="tasksCounts"></app-chart>
      </div>
 
      
