@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../tasks/task-interface';
 import { TaskService } from '../tasks/task.service';
 
-interface Category {
+interface Column {
   name: string;
   tasks: Task[];
 }
@@ -12,24 +12,23 @@ interface Category {
   templateUrl: './kanban.component.html',
   styleUrls: ['./kanban.component.scss']
 })
-export class KanbanComponent  {
-  
-  @Output() eventEmitter = new EventEmitter()
+export class KanbanComponent {
+  @Output() eventEmitter = new EventEmitter();
   @Input() set tasks(value: Task[]) {
     this._tasks = value || [];
-    this.categorizeTasks(); // Chama categorizeTasks sempre que a lista de tasks é atualizada
+    this.categorizeTasks();
     console.log("Tasks recebidas:", this._tasks);
   }
-  
+
   get tasks(): Task[] {
     return this._tasks;
   }
 
   private _tasks: Task[] = [];
   private draggedTask?: Task;
+  public dragOverColumn?: Column;
 
-
-  categories: Category[] = [
+  columns: Column[] = [
     { name: 'Pendente', tasks: [] },
     { name: 'Em Andamento', tasks: [] },
     { name: 'Concluido', tasks: [] }
@@ -47,39 +46,60 @@ export class KanbanComponent  {
     console.log("Arrastando a tarefa:", task.titulo);
   }
 
-  onDragOver(event: DragEvent): void {
+  onDragOver(event: DragEvent, column: Column): void {
     event.preventDefault();
     event.dataTransfer!.dropEffect = 'move';
+    this.dragOverColumn = column;
   }
 
   onDragEnd(event: DragEvent): void {
     event.preventDefault();
     this.draggedTask = undefined;
+    this.dragOverColumn = undefined;
   }
 
-  onDrop(event: DragEvent, category: Category): void {
+  onDrop(event: DragEvent, column: Column): void {
     event.preventDefault();
-    if (this.draggedTask) {
-      this.draggedTask.status = category.name;
-      this.taskService.updateTask(this.draggedTask).subscribe(() => {
-        this.categorizeTasks();
-        console.log("Tarefa solta na categoria:", category.name);
-      });
+    if (this.draggedTask && this.dragOverColumn) {
+      if (this.draggedTask.status !== this.dragOverColumn.name) {
+        const sourceColumn = this.draggedTask.status ? this.getColumnByName(this.draggedTask.status) : undefined;
+        if (sourceColumn) {
+          this.removeTaskFromColumn(this.draggedTask, sourceColumn);
+        }
+
+        this.dragOverColumn.tasks.push(this.draggedTask);
+
+        this.draggedTask.status = this.dragOverColumn.name;
+
+        this.taskService.updateTask(this.draggedTask).subscribe(() => {
+          this.categorizeTasks();
+          console.log("Tarefa solta na coluna:", column.name);
+        });
+      }
+
       this.draggedTask = undefined;
+      this.dragOverColumn = undefined;
     }
   }
 
   categorizeTasks(): void {
-    this.categories.forEach(category => {
-      category.tasks = this.tasks.filter(task => task.status === category.name);
+    this.columns.forEach(column => {
+      column.tasks = this.tasks.filter(task => task.status === column.name);
     });
   }
-  openModal(task:Task){
-    
-    
-    
-    this.eventEmitter.emit(task)
 
+  openModal(task: Task): void {
+    this.eventEmitter.emit(task);
+  }
+
+  getColumnByName(name: string): Column | undefined {
+    return this.columns.find(column => column.name === name);
+  }
+
+  removeTaskFromColumn(task: Task, column: Column): void {
+    const index = column.tasks.indexOf(task);
+    if (index !== -1) { //VER SE A TASK FOI ENCONTRADA NO ARRAY
+      column.tasks.splice(index, 1); //INDEX E O 1 VAI DIZER QUE SO VAI REMOVER 1
+    }
   }
 }
-
