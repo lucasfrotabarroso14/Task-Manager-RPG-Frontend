@@ -24,18 +24,27 @@ export class HomeComponent implements OnInit {
 
     this.taskService.countTasks().subscribe((taskCountedFromServer: TaskStatusCount) => {
       this.tasksCounts = taskCountedFromServer;
-      console.log("dados enviados",this.tasksCounts); //aqui ele retorna o objeto do backend que eu quero
-      
-   
-      
+      console.log("dados enviados",this.tasksCounts); //aqui ele retorna o objeto do backend que eu quero     
     });
+      
+  }
+  aproveTask(task:Task){
+    console.log(task);
+    task.status="Em Andamento"
+    console.log(task);
     
-    
-    
-    
-    
+    this.taskService.updateTask(task).subscribe(
+      (response:any)=> {
+        console.log("Status da task atualizado com sucesso no backend", response);
+        this.tasks_pendentes= this.tasks_pendentes.filter((item)=> item !== task)
+
+      },
+      (error)=>{
+        console.error("Erro ao atualizar o status da task no backend", error);
+        
+      }
+    )
   
-     
-     
+    
   }
 }

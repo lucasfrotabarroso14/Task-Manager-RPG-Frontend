@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Task } from '../task-interface';
 
 
@@ -9,9 +9,15 @@ import { Task } from '../task-interface';
 })
 export class TaskCardComponent implements OnInit {
   @Input() task!: Task 
+  @Output() eventEmitter = new EventEmitter();
 
   ngOnInit(): void {
       
+  }
+  onClick01(){
+    this.eventEmitter.emit()
+
+    
   }
 
   

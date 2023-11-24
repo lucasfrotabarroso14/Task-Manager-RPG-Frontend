@@ -16,7 +16,11 @@
           </div>
           <div class="card-container">
                
-               <app-task-card *ngFor="let task of tasks_pendentes" [task]="task"></app-task-card>
+               <app-task-card 
+                *ngFor="let task of tasks_pendentes"
+                 [task]="task"
+                 (eventEmitter)="aproveTask(task)"
+               ></app-task-card>
           </div>
          
      </div>
