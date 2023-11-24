@@ -43,14 +43,14 @@
     height: 38%; 
   }
 
-
+  
 .card-header{
     
     padding: 22px;
     font-family: 'Arial', sans-serif;
     color: #333;
     flex: 1; /* Isso faz com que o .card-body ocupe todo o espaço disponível */
-    overflow: auto;  
+   
    
     height: 150px; //altura
     width: 100%;
@@ -59,6 +59,24 @@
 }
 
 
+.card-empty {
+    background-image: linear-gradient(to bottom, #a52a2a, #5a2a2a);
+    border-radius: 0.8rem;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+
+  
+ 
+  
 
 .card-header h3{
     font-family: 'Roboto Slab', serif;
@@ -66,6 +84,7 @@
     font-weight: bold; // título em negrito
     text-transform: uppercase;
     height: 30%;
+    overflow: auto;  
     
 }
 .card-header h4{
@@ -157,7 +176,6 @@
     transition: all .5s ease;
     
    }
-   
    
    
   

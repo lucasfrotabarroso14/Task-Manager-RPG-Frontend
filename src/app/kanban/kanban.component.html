@@ -13,6 +13,7 @@
           *ngFor="let task of column.tasks" 
           class="task-card"
           draggable="true"
+          (click)="openModal(task)"
           (dragstart)="onDragStart($event, task)"
           (dragend)="onDragEnd($event)"
           [ngClass]="{
