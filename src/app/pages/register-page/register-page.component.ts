@@ -12,21 +12,34 @@ export class RegisterPageComponent {
   email : string = ''
   username: string = '';
   password: string = '';
-  openmodal :boolean = false
+  visible: boolean = false
+  dialogMessage: string =''
   
   registerError : string ='';
   
   constructor(private authService: AuthService, private router: Router) {}
-
-  OnRegister(){
+  openAndCloseDialog(){
+    
+    return this.visible= !this.visible
+  }
+  
+  onRegister(){
     this.authService.register(this.email,this.username,this.password)
     .subscribe(
       (response : any)=> {
-        this.openmodal = true
-        this.router.navigate(['/login'])
+        this.dialogMessage='Registrado com Sucesso!'
+        this.openAndCloseDialog()
+     
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 3000); 
       },
       (error)=>{
-        this.registerError="Erro ao realizar o registro"
+        this.dialogMessage="Erro ao realizar o registro"
+        this.openAndCloseDialog()
+        setTimeout(() => {
+         this.openAndCloseDialog();
+        }, 3000); 
       }
     )
 

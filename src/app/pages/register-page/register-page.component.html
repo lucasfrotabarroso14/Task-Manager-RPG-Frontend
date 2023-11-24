@@ -9,7 +9,7 @@
         <!-- <input type="password" [(ngModel)]="password" placeholder="Repita sua Senha" name="password" class="input"> -->
         <div class="login-with">
           <div class="botoes">
-            <button class="button-confirm"(click)="OnRegister()">Confirmar</button>
+            <button class="button-confirm"(click)="onRegister()">Confirmar</button>
             <button routerLink="/login" class="button-back">Voltar</button>
           </div>
         </div>
@@ -17,7 +17,21 @@
         
       </form>
 
+      <!-- <div class="modal">
+        <p-dialog  [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" >
+          <h3>{{ dialogMessage }}</h3>
+        </p-dialog>
+      </div> -->
       
+
+      <div class="overlay" [class.active]="visible"></div>
+
+<div class="custom-dialog" [class.visible]="visible">
+  <div class="dialog-content">
+    <h3>{{ dialogMessage }}</h3>
+  </div>
+</div>
+
     
     
        
