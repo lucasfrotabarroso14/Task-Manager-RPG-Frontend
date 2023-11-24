@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/pages/login-page/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  constructor(private authService : AuthService){}
 
   displayAddTaskDialog : boolean = false
 
@@ -15,6 +17,9 @@ export class HeaderComponent {
     this.displayAddTaskDialog = !this.displayAddTaskDialog
     console.log(this.displayAddTaskDialog);
     
+  }
+  logout(){
+    this.authService.logout()
   }
 
   

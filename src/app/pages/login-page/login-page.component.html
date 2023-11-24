@@ -3,12 +3,13 @@
 
     <form class="form">
       <div class="title"><img src="../../../assets/IMG_8479.jpg" alt="Logo" class="logo"> </div>
-      <input type="email" placeholder="Email" name="email" class="input">
-      <input type="password" placeholder="Password" name="password" class="input">
+
+      <input type="username" [(ngModel)]="username" placeholder="username" name="username" class="input">
+      <input type="password" [(ngModel)]="password" placeholder="Password" name="password" class="input">
       <div class="login-with">
         <div class="botoes">
-          <button class="button-confirm">Entrar →</button>
-          <button class="button-register">Registrar</button>
+          <button class="button-confirm" (click)="onLogin()">Entrar →</button>
+          <button routerLink="/register" class="button-register">Registrar</button>
         </div>
       </div>
       

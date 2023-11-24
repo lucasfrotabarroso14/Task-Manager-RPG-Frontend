@@ -25,10 +25,11 @@ import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalComponent } from './shared/components/modal/modal.component';
 import { ChartModule } from 'primeng/chart';
 import { ChartComponent } from './shared/components/chart/chart.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 
 
@@ -45,9 +46,10 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     TaskPageComponent,
     KanbanComponent,
     TaskFormComponent,
-    ModalComponent,
     ChartComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    RegisterPageComponent,
+  
 
     
     
@@ -68,7 +70,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     DropdownModule,
     CalendarModule,
     BrowserAnimationsModule,
-    ChartModule
+    ChartModule,
+    FormsModule
     
    
     
