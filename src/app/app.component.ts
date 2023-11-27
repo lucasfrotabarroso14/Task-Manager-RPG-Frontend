@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private router : Router){
     this.router.events.subscribe(event =>{
       if(event instanceof NavigationEnd){
-        this.showHeaderFooter =  event.url.includes('home') || event.url.includes('tasks')
+        this.showHeaderFooter =  event.url.includes('home') || event.url.includes('tasks') || event.url.includes('profile')
        
       }
     }

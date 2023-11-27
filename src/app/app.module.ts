@@ -30,6 +30,8 @@ import { ChartComponent } from './shared/components/chart/chart.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { PizzaChartComponent } from './shared/components/pizza-chart/pizza-chart.component';
 
 
 
@@ -49,6 +51,8 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     ChartComponent,
     LoginPageComponent,
     RegisterPageComponent,
+    ProfilePageComponent,
+    PizzaChartComponent
   
 
     

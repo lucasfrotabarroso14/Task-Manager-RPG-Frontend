@@ -6,12 +6,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AuthGuard } from './shared/auth-guards';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 const routes: Routes = [
   { path:'tasks', component: TaskPageComponent},//canActivate:[AuthGuard]
   {path:'home', component: HomeComponent}, //canActivate:[AuthGuard]
   {path:'login',component:LoginPageComponent,},
-  {path:'register',component:RegisterPageComponent}
+  {path:'register',component:RegisterPageComponent},
+  {path:'profile', component:ProfilePageComponent}
 
 ];
 

@@ -1,0 +1,99 @@
+.profile-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+.card {
+    width: 40rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0rem;
+}
+
+.profile-content {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.user-picture {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    background: brown; /* Placeholder if SVG fails to load */
+}
+
+.user-picture svg {
+    width: 50%; /* Adjust as needed */
+    fill: #fff;
+}
+
+.name-client {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+
+.role {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.profile-info {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    
+}
+
+.task-summary {
+    margin-top: 2rem;
+}
+
+.task-summary h4 {
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.task-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-summary li {
+    background: #eee;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.shadow {
+    box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+}
+
+.pizza-chart{
+    
+   margin-left: 10rem;
+    height: 15rem;
+    width: 15rem;
+}
+
