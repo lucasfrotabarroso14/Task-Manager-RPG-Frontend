@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TaskLevelCount } from 'src/app/tasks/task-interface';
 
 @Component({
   selector: 'app-pizza-chart',
@@ -7,20 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PizzaChartComponent implements OnInit {
   data: any;
+  @Input() taskLevelCounted !: TaskLevelCount ;
 
   options: any;
 
   ngOnInit() {
       const documentStyle = getComputedStyle(document.documentElement);
       const textColor = documentStyle.getPropertyValue('--text-color');
+     
+      console.log(this.taskLevelCounted);
+      
 
       this.data = {
-          labels: ['A', 'B', 'C'],
+          labels: ['Fácil', 'Médio', 'Difícil'],
           datasets: [
               {
-                  data: [540, 325, 702],
-                  backgroundColor: [documentStyle.getPropertyValue('--blue-700'), documentStyle.getPropertyValue('--brown-500'), documentStyle.getPropertyValue('--red-700')],
-                  hoverBackgroundColor: [documentStyle.getPropertyValue('--blue-900'), documentStyle.getPropertyValue('--black-400'), documentStyle.getPropertyValue('--brown-500')]
+                  data: [this.taskLevelCounted.facil, this.taskLevelCounted.medio, this.taskLevelCounted.dificil],
+                  backgroundColor: [documentStyle.getPropertyValue('--green-700'), documentStyle.getPropertyValue('--yellow-500'), documentStyle.getPropertyValue('--red-700')],
+                  hoverBackgroundColor: [documentStyle.getPropertyValue('--green-900'), documentStyle.getPropertyValue('--yellow-400'), documentStyle.getPropertyValue('--red-500')]
               }
           ]
       };

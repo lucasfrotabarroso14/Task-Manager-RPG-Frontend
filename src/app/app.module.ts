@@ -32,7 +32,9 @@ import { FormsModule } from '@angular/forms';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { PizzaChartComponent } from './shared/components/pizza-chart/pizza-chart.component';
-
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmDialogComponent } from './shared/components/confirm-dialog/confirm-dialog.component';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 
 
@@ -52,7 +54,9 @@ import { PizzaChartComponent } from './shared/components/pizza-chart/pizza-chart
     LoginPageComponent,
     RegisterPageComponent,
     ProfilePageComponent,
-    PizzaChartComponent
+    PizzaChartComponent,
+    ConfirmDialogComponent 
+   
   
 
     
@@ -75,12 +79,13 @@ import { PizzaChartComponent } from './shared/components/pizza-chart/pizza-chart
     CalendarModule,
     BrowserAnimationsModule,
     ChartModule,
-    FormsModule
+    FormsModule,
+    ConfirmDialogModule
     
    
     
   ],
-  providers: [],
+  providers: [ConfirmationService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

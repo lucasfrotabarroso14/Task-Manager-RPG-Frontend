@@ -74,41 +74,32 @@
     
    
   }
-  
-//   .sign svg path {
-//     fill: var(--night-rider);
-//   }
-  /* text */
-//   .text {
-//     position: absolute;
-//     right: 0%;
-//     width: 0%;
-//     opacity: 0;
-//     color:white;
-//     font-size: 1.2em;
-//     font-weight: 600;
-//     transition-duration: .3s;
-//   }
 
-//   .Btn:hover {
-//     width: 125px;
-//     border-radius: 5px;
-//     transition-duration: .3s;
-//   }
-  
-//   .Btn:hover .sign {
-//     width: 30%;
-//     transition-duration: .3s;
-//     padding-left: 20px;
-//   }
-  /* hover effect button's text */
-//   .Btn:hover .text {
-//     opacity: 1;
-//     width: 70%;
-//     transition-duration: .3s;
-//     padding-right: 10px;
-//   }
-  /* button click effect*/
   .Btn:active {
     transform: translate(1px ,1px);
   }
+
+//   :host ::ng-deep .p-button:focus { //removendo o a borda que o priome faz quando clico no botao
+//     outline: none !important; /* Removes the default browser outline */
+//     box-shadow: 0 0 0 2px black !important; /* Adds a box shadow to simulate an outline with your desired color */
+// }
+
+:host ::ng-deep .p-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Efeito de hover para alterar a cor do botão para uma tonalidade mais clara */
+:host ::ng-deep .p-button:hover {
+  background-color: white !important; 
+  background-color: white !important;
+  border-color: white !important;
+}
+
+/* Efeito de "ativo" para quando o botão for clicado */
+:host ::ng-deep .p-button:active {
+  background-color: rgb(142, 54, 54) !important;
+  border-color: rgb(142, 54, 54) !important;
+  background-image: rgb(142, 54, 54) !important;
+  /* Substitua #corAoClicar pela cor que você quer que apareça quando o botão for pressionado */
+}

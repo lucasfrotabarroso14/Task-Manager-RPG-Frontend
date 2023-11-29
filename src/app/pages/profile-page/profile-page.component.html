@@ -14,18 +14,17 @@
                     <p>Phone: +123456789</p>
                     <p>Skills: JavaScript, React, Node.js</p>
                 </div>
-                <div class="task-summary">
+                <div  class="task-summary">
                     <h4>Current Tasks</h4>
-                    <ul>
-                        <li>Implement feature X</li>
-                        <li>Fix bug in module Y</li>
-                        <li>Review pull request Z</li>
+                    <ul *ngFor="let task of currentsTasks">
+                        <li>{{task.titulo}}</li>
+                
                     </ul>
                 </div>
                 
                 <div class="pizza-chart">
                     
-                    <app-pizza-chart></app-pizza-chart>
+                    <app-pizza-chart *ngIf="tasksLevelCounts" [taskLevelCounted]="tasksLevelCounts"></app-pizza-chart>
                 </div>
             </div>
         </div>

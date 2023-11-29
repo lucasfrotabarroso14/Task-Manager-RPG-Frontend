@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Environment } from 'src/environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { Task,TaskStatusCount } from './task-interface';
+import { Task,TaskLevelCount,TaskStatusCount } from './task-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,13 @@ export class TaskService {
     .pipe(
       map(response => response.result)
     )
-   
-
   }
+
+  countTaskLevel(): Observable<TaskLevelCount> {
+    return this.http.get<{result : TaskLevelCount}>(`${this.apiUrl}dificuldade_count`)
+    .pipe(
+      map(response => response.result)
+    )
+  }
+
 }

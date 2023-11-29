@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { PizzaChartComponent } from './components/pizza-chart/pizza-chart.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 
@@ -17,7 +18,8 @@ import { PizzaChartComponent } from './components/pizza-chart/pizza-chart.compon
     FooterComponent,
     ModalComponent,
     ChartComponent,
-    PizzaChartComponent
+    PizzaChartComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule

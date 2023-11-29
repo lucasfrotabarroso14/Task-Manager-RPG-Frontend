@@ -15,3 +15,10 @@ export interface TaskStatusCount {
         concluido: number;
         total_tasks: number;
 }
+
+export interface TaskLevelCount {
+    facil : number;
+    medio : number;
+    dificil : number;
+    total: number
+}
