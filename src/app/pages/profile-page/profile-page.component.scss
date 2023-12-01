@@ -10,7 +10,6 @@
     width: 40rem;
     background: white;
     border-radius: 10px;
-
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -22,7 +21,6 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    
 }
 
 .profile-header {
@@ -62,14 +60,15 @@
     color: #666;
     border-top: 1px solid #eee;
     padding-top: 1rem;
-    
 }
 
 .task-summary {
     margin-top: 2rem;
+    overflow: auto; /* Adicionado para permitir rolagem */
+    max-height: 200px; /* Ajuste conforme necessário */
 }
 
-.task-summary h4 {
+.h4 {
     font-size: 1.25rem;
     color: #333;
 }
@@ -90,10 +89,8 @@
     box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
 }
 
-.pizza-chart{
-    
-   margin-left: 10rem;
+.pizza-chart {
+    margin-left: 10rem;
     height: 15rem;
     width: 15rem;
 }
-

@@ -2,13 +2,13 @@
     <p-toast></p-toast>
     <p-confirmDialog #cd [style]="{ width: '50vw' }" >
         <ng-template pTemplate="header">
-            <h3>Header Content</h3>
+            <h3>Tem certeza que deseja sair?</h3>
         </ng-template>
         <ng-template pTemplate="icon">
             <i class="pi pi-user"></i>
         </ng-template>
         <ng-template pTemplate="message">
-            <p>Message Template</p>
+            <p>Message Templatde</p>
         </ng-template>
         <ng-template pTemplate="footer">
             <button type="button" pButton icon="pi pi-times" label="No" (click)="cd.reject()"></button>
