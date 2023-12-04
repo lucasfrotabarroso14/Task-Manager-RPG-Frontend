@@ -10,6 +10,7 @@ import { Task } from '../task-interface';
 export class TaskCardComponent implements OnInit {
   @Input() task!: Task 
   @Output() eventEmitter = new EventEmitter();
+  @Output() eventEmitter02 = new EventEmitter();
 
   ngOnInit(): void {
       
@@ -18,6 +19,9 @@ export class TaskCardComponent implements OnInit {
     this.eventEmitter.emit()
 
     
+  }
+  onClick02(){ //para
+    this.eventEmitter02.emit()
   }
 
   

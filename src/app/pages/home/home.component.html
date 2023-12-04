@@ -5,7 +5,7 @@
                <h2>STATUS TASKS:</h2>
           </div>
           
-          <app-chart *ngIf="tasksCounts" [status_count]="tasksCounts"></app-chart>
+          <app-chart *ngIf="tasksCounts" [status_count]="tasksCounts"></app-chart> 
      </div>
 
      
@@ -20,6 +20,7 @@
                 *ngFor="let task of tasks_pendentes"
                  [task]="task"
                  (eventEmitter)="aproveTask(task)"
+                 (eventEmitter02)="deleteTask(task)"
                ></app-task-card>
           </div>
          
