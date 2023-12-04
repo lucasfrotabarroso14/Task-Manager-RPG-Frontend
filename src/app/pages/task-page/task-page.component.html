@@ -27,7 +27,8 @@
     
         <div class="card-container">
            
-            <app-task-card  [task]="selectedTask">
+            <app-task-card  [task]="selectedTask" 
+             (eventEmitter02) = 'deleteTask(selectedTask)'>
                
             </app-task-card>
         </div>

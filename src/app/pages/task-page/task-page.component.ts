@@ -21,10 +21,13 @@ export class TaskPageComponent implements OnInit {
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasksFromServer: Task[]) => {
       this.tasks = tasksFromServer;
-      
-      
+
       
     });
+
+    this.taskService.tasksSubject.subscribe((updatedTasks : Task[]) => {
+      this.tasks = updatedTasks
+    })
   }
   onTaskSelected(task : Task){
     this.selectedTask = task
@@ -41,5 +44,18 @@ export class TaskPageComponent implements OnInit {
     this.visible = !this.visible
    
     
+  }
+  deleteTask(task: Task): void {
+    this.taskService.deleteTask(task.id_task).subscribe(
+      (response: any) => {
+        console.log("Task excluida com sucesso", response);
+        this.taskService.updateChartData()
+        
+        
+      },
+      (error) => {
+        console.log("Erro ao excluir a task no backend", error);
+      }
+    );
   }
 }

@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
       (response: any) => {
         console.log("Status da task atualizado com sucesso no backend", response);
         this.tasks_pendentes = this.tasks_pendentes.filter((item) => item !== task);
+        this.updateChartData()
        
         
       },
@@ -55,6 +56,7 @@ export class HomeComponent implements OnInit {
     this.taskService.deleteTask(task.id_task).subscribe(
       (response: any) => {
         console.log("Task excluida com sucesso", response);
+        this.updateChartData()
         
       },
       (error) => {
@@ -63,7 +65,7 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  // private updateChartData(): void{
-  //   this.taskService.updateChartData()
-  // }
+  updateChartData(): void{
+    this.taskService.updateChartData()
+  }
 }

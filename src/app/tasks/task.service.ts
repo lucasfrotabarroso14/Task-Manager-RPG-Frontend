@@ -10,6 +10,7 @@ import { Task, TaskLevelCount, TaskStatusCount } from './task-interface';
 export class TaskService {
   private baseApiUrl = Environment.baseApiUrl;
   private apiUrl = `${this.baseApiUrl}tasks/`;
+  
   public tasksSubject = new BehaviorSubject<Task[]>([]);
   public pendingTasksSubject = new BehaviorSubject<Task[]>([]);
   public chartDataSubject = new BehaviorSubject<TaskStatusCount | null>((null))

@@ -7,7 +7,7 @@ import { TaskStatusCount } from 'src/app/tasks/task-interface';
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
-export class ChartComponent implements OnInit, OnChanges {
+export class ChartComponent implements OnInit {
     
   basicData: any;
   basicOptions: any;
@@ -80,15 +80,15 @@ export class ChartComponent implements OnInit, OnChanges {
 
 
   
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['status_count'] && this.status_count && this.basicData && this.basicData.datasets[0]) {
-        this.updateChartData();
-        console.log("on change chamou");
+  // ngOnChanges(changes: SimpleChanges) {
+  //   if (changes['status_count'] && this.status_count && this.basicData && this.basicData.datasets[0]) {
+  //       this.updateChartData();
+  //       console.log("on change chamou");
         
         
      
-    }
-  }
+  //   }
+  // }
 
   updateChartData() {
     if (this.status_count) {
