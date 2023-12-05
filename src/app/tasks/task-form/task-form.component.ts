@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {  FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { TaskService } from '../task.service';
 import { formatDate } from '@angular/common';
 
@@ -8,57 +8,56 @@ import { formatDate } from '@angular/common';
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.scss']
 })
-export class TaskFormComponent implements OnInit{
-  constructor(private taskService : TaskService){}
+export class TaskFormComponent implements OnInit {
+  @Output() taskAdded: EventEmitter<void> = new EventEmitter<void>();
 
-  dificuldade_options : any[]=[
-    {label : 'Fácil', value: 'Facil'},
-    {label:'Médio', value: 'Medio'},
-    {label:'Difícil', value:'Dificil'}
-  ]
+  constructor(private taskService: TaskService) {}
 
-  status_options : any[]=[
-    {label : 'Pendente', value: 'Pendente'},
-    {label:'Em Andamento', value:'Em Andamento'},
-    {label:'Concluído', value:'Concluido'}
-  ]
+  dificuldade_options: any[] = [
+    { label: 'Fácil', value: 'Facil' },
+    { label: 'Médio', value: 'Medio' },
+    { label: 'Difícil', value: 'Dificil' }
+  ];
+
+  status_options: any[] = [
+    { label: 'Pendente', value: 'Pendente' },
+    { label: 'Em Andamento', value: 'Em Andamento' },
+    { label: 'Concluído', value: 'Concluido' }
+  ];
   taskForm!: FormGroup;
-  visible : boolean= true
+  visible: boolean = true;
 
   ngOnInit(): void {
-    this.taskForm= new FormGroup({
+    this.taskForm = new FormGroup({
       titulo: new FormControl(''),
       descricao: new FormControl(''),
-      dificuldade : new FormControl(''),
-      status : new FormControl(''),
+      dificuldade: new FormControl(''),
+      status: new FormControl(''),
       data_conclusao: new FormControl(new Date().toISOString().split('T')[0])
-    })
-      
+    });
   }
-  onSubmit(){
-    
-    if(this.taskForm.valid){
+
+  onSubmit() {
+    if (this.taskForm.valid) {
       let formData = { ...this.taskForm.value };
 
-    // Formatando a data de conclusão
-    if (formData.data_conclusao) {
-      formData.data_conclusao = formatDate(formData.data_conclusao, 'yyyy-MM-dd', 'en-US');
-    }
+      // Formatando a data de conclusão
+      if (formData.data_conclusao) {
+        formData.data_conclusao = formatDate(formData.data_conclusao, 'yyyy-MM-dd', 'en-US');
+      }
       this.taskService.addTask(formData).subscribe({
-        next : (newTask) => {
+        next: (newTask) => {
           this.taskForm.reset();
-          this.visible= false
+          this.visible = false;
           console.log("task enviada");
-          
-      
-        },
-        error:(error) =>{
-          console.log("Erro ao adicionar task:", error);
-          
-        }
-      })
-    }
 
+          // Emita o evento para notificar o componente pai (TaskPageComponent) para atualizar a lista de tarefas.
+          this.taskAdded.emit();
+        },
+        error: (error) => {
+          console.log("Erro ao adicionar task:", error);
+        }
+      });
+    }
   }
-  
 }

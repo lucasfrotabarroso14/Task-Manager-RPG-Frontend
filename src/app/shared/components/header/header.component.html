@@ -27,7 +27,7 @@
        </button>
    </div>
   </p-toolbar>
-  <app-task-form *ngIf="displayAddTaskDialog"></app-task-form>
+  <app-task-form *ngIf="displayAddTaskDialog"(taskAdded)='updateTaskList()'></app-task-form>
   <app-confirm-dialog></app-confirm-dialog>
 
   

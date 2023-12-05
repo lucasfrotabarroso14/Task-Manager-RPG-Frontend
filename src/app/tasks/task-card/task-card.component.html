@@ -31,8 +31,8 @@
         </div>
 
         <div class="card-footer">
-          <button class="btn btn-save" (click)="onClick01()">Aceitar</button>
-          <button class="btn btn-cancel" (click)="onClick02()">Recusar </button>
+          <button *ngIf="botaoAceitar" class="btn btn-save" (click)="onClick01()">Aceitar</button>
+          <button  class="btn btn-cancel" (click)="onClick02()">{{botao02}} </button>
       </div>
       </div>
       

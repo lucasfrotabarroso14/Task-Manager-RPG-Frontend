@@ -10,6 +10,7 @@ import { TaskService } from 'src/app/tasks/task.service';
 export class HomeComponent implements OnInit {
   tasks_pendentes: Task[] = [];
   tasksCounts!: TaskStatusCount;
+  botao02 : string ='Excluir'
 
   constructor(private taskService: TaskService) {}
 

@@ -11,6 +11,8 @@ export class TaskCardComponent implements OnInit {
   @Input() task!: Task 
   @Output() eventEmitter = new EventEmitter();
   @Output() eventEmitter02 = new EventEmitter();
+  @Input() botao02 !: string
+  @Input() botaoAceitar : boolean = true
 
   ngOnInit(): void {
       

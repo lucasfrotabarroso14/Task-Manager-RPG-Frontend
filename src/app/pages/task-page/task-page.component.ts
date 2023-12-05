@@ -13,12 +13,18 @@ export class TaskPageComponent implements OnInit {
   selectedTask !: Task 
   visible: boolean = false
   descricao_task : string | null = null
+  botao02 = 'Excluir'
 
 
   constructor(private taskService: TaskService) {}
   
 
   ngOnInit(): void {
+    this.getTasks()
+
+    
+  }
+  getTasks(){
     this.taskService.getTasks().subscribe((tasksFromServer: Task[]) => {
       this.tasks = tasksFromServer;
 
@@ -58,4 +64,9 @@ export class TaskPageComponent implements OnInit {
       }
     );
   }
+
+  handleTaskAdded() {
+    this.getTasks(); // Atualize a lista de tarefas quando uma nova tarefa for adicionada
+  }
+
 }
