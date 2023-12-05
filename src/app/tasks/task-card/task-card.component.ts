@@ -8,7 +8,7 @@ import { Task } from '../task-interface';
   styleUrls: ['./task-card.component.scss']
 })
 export class TaskCardComponent implements OnInit {
-  @Input() task!: Task 
+  @Input() task!: Task | null
   @Output() eventEmitter = new EventEmitter();
   @Output() eventEmitter02 = new EventEmitter();
   @Input() botao02 !: string
