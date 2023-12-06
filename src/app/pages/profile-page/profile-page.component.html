@@ -14,13 +14,15 @@
                     <p>Phone: +123456789</p>
                     <p>Skills: JavaScript, React, Node.js</p>
                 </div>
-                <div  class="task-summary">
+                <div class="task-summary">
                     <h4>Current Tasks</h4>
-                    <ul *ngFor="let task of currentsTasks">
-                        <li>{{task.titulo}}</li> 
-                
+                    <ul class="current-tasks-list">
+                      <li *ngFor="let task of currentsTasks">{{ task.titulo }}</li>
                     </ul>
-                </div>
+                    <p *ngIf="currentsTasks.length === 0">Você não possui tasks pendentes</p>
+                  </div>
+                  
+                  
                 
                 <div class="pizza-chart">
                     
