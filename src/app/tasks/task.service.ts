@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, map } from 'rxjs';
 import { Task, TaskLevelCount, TaskStatusCount } from './task-interface';
@@ -8,7 +8,7 @@ import { Task, TaskLevelCount, TaskStatusCount } from './task-interface';
   providedIn: 'root'
 })
 export class TaskService {
-  private baseApiUrl = Environment.baseApiUrl;
+  private baseApiUrl = environment.baseApiUrl;
   private apiUrl = `${this.baseApiUrl}tasks/`;
   
   public tasksSubject = new BehaviorSubject<Task[]>([]);
