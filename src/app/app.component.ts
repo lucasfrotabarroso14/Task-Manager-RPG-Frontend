@@ -8,18 +8,16 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent {
 
-  showHeaderFooter: boolean = true;
+  showHeaderFooter: boolean = false;
   
-  constructor(private router : Router){
-    this.router.events.subscribe(event =>{
-      if(event instanceof NavigationEnd){
-        this.showHeaderFooter =  event.url.includes('') || event.url.includes('tasks') || event.url.includes('profile')
-       
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // O cabeçalho e o rodapé não devem ser mostrados na rota de login e registro
+        this.showHeaderFooter = !(event.url.endsWith('/login') || event.url.endsWith('/register'));
       }
-    }
-      )
+    });
   }
-
 
   title = 'Task Manager';
 }
