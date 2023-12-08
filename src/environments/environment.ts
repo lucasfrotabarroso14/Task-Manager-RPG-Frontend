@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    baseApiUrl:"https://lucasfrotabarroso.pythonanywhere.com/"
+    baseApiUrl:"http://127.0.0.1:8000/"
 }
