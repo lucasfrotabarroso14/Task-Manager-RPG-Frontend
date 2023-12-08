@@ -10,7 +10,7 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 
 const routes: Routes = [
   { path:'tasks', component: TaskPageComponent},//canActivate:[AuthGuard]
-  {path:'/', component: HomeComponent}, //canActivate:[AuthGuard]
+  {path:'', component: HomeComponent}, //canActivate:[AuthGuard]
   {path:'login',component:LoginPageComponent,},
   {path:'register',component:RegisterPageComponent},
   {path:'profile', component:ProfilePageComponent}
