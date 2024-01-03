@@ -31,3 +31,30 @@
 // .card-container{
 //     margin-left: 30px;
 // }
+
+@media only screen and (max-width: 768px) {
+    .task-page-container {
+        gap: 10px;
+        margin: 10px;
+    }
+
+    .kanban-container {
+        margin-bottom: 10px;
+    }
+
+    .table-card-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .table-container {
+        max-width: 100%;
+        margin-bottom: 2rem;
+        padding: 5px;
+    }
+
+    .card-container {
+        /* Descomente e ajuste conforme necessário */
+        /* margin-left: 0; */
+    }
+}

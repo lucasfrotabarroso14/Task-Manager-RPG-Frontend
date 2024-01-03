@@ -121,3 +121,48 @@
     height: 15rem;
     width: 15rem;
 }
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 90vw; /* Usa 90% da largura da tela */
+        margin: 1rem; /* Adiciona uma pequena margem */
+    }
+
+    .profile-content, .profile-header, .profile-info, .task-summary, .pizza-chart {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pizza-chart {
+        height: 10rem;
+        width: 10rem;
+        margin-left: 0; /* Remove a margem esquerda */
+        margin-top: 1rem; /* Adiciona margem acima do gráfico */
+    }
+
+    .name-client {
+        font-size: 1.25rem; /* Menor que a fonte original */
+    }
+
+    .role, .task-summary h4 {
+        font-size: 1rem; /* Menor que a fonte original */
+    }
+
+    .user-picture svg {
+        width: 70%; /* Aumente a porcentagem se necessário */
+    }
+
+    .task-summary {
+        position: static; /* Remove o sticky para telas pequenas */
+        overflow: visible; /* Evita cortes */
+        max-height: none; /* Permite que o conteúdo defina a altura */
+        margin-top: 1rem;
+    }
+
+    .task-summary p {
+        padding: 1rem; /* Ajusta o preenchimento */
+        margin-left: 0; /* Alinha à esquerda */
+        position: static; /* Remove a posição absoluta */
+    }
+}
